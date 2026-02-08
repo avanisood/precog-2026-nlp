@@ -1,6 +1,6 @@
 # Class Imbalance Impact Analysis: Comprehensive Experimental Validation
 
-**Report Generated:** 2026-02-07 14:20:15  
+**Report Generated:** 2026-02-08 21:50:47  
 **Dataset:** Human vs AI Text Classification  
 **Task:** Binary classification (Human=0, AI=1)
 
@@ -16,10 +16,10 @@
 ### Overall Verdict: **MINOR CONCERN**
 
 **Key Findings:**
-1. Class weight correction changed accuracy by **-0.43%** (Experiment 1)
-2. Maximum coefficient of variation: **1.70%** - highly stable (Experiment 2)
-3. Balanced training improved AI recall by **+4.00%** (Experiment 3)
-4. AI recall variance is **5.62x** Human variance - variance issue (Experiment 4)
+1. Class weight correction changed accuracy by **-0.29%** (Experiment 1)
+2. Maximum coefficient of variation: **2.12%** - moderately stable (Experiment 2)
+3. Balanced training improved AI recall by **+3.00%** (Experiment 3)
+4. AI recall variance is **4.00x** Human variance - variance issue (Experiment 4)
 
 ### Recommendations
 
@@ -36,28 +36,28 @@ Test whether using proper class weights changes model performance.
 
 ### Methodology
 - **Version 1:** Unweighted (no correction) - current approach
-- **Version 2:** Weighted (scale_pos_weight = 2.4987)
+- **Version 2:** Weighted (scale_pos_weight = 2.4944)
 - **Version 3:** Balanced (random undersampling to 1:1 ratio)
 
 ### Results
 
 | Approach | Accuracy | Human Recall | AI Recall | AUC |
 |----------|----------|--------------|-----------|-----|
-| Unweighted | 0.9728 | 0.9819 | 0.9500 | 0.9957 |
-| Weighted | 0.9685 | 0.9719 | 0.9600 | 0.9949 |
-| Balanced | 0.9599 | 0.9558 | 0.9700 | 0.9944 |
+| Unweighted | 0.9714 | 0.9780 | 0.9550 | 0.9948 |
+| Weighted | 0.9685 | 0.9699 | 0.9650 | 0.9949 |
+| Balanced | 0.9557 | 0.9519 | 0.9650 | 0.9933 |
 
 ### Performance Changes (Weighted vs Unweighted)
-- Accuracy: **-0.43%**
-- Human Recall: **-1.00%**
+- Accuracy: **-0.29%**
+- Human Recall: **-0.80%**
 - AI Recall: **+1.00%**
-- AUC: **-0.0008**
+- AUC: **+0.0000**
 
 ### Interpretation
 **MINIMAL IMPACT:** Using class weights provides minimal benefit (<1% accuracy change). Classes are naturally separable despite imbalance.
 
 ### Statistical Significance
-- Change magnitude: **0.43%**
+- Change magnitude: **0.29%**
 - Conclusion: **Not significant**
 
 ---
@@ -75,25 +75,25 @@ Determine if class imbalance causes unstable results across different random ini
 
 | Metric | Mean | Std | CV (%) |
 |--------|------|-----|--------|
-| Accuracy | 0.9693 | 0.0062 | 0.64 |
-| Human Recall | 0.9805 | 0.0047 | 0.48 |
-| AI Recall | 0.9415 | 0.0160 | 1.70 |
-| AUC | 0.9959 | 0.0008 | 0.08 |
+| Accuracy | 0.9652 | 0.0063 | 0.66 |
+| Human Recall | 0.9800 | 0.0052 | 0.53 |
+| AI Recall | 0.9285 | 0.0197 | 2.12 |
+| AUC | 0.9947 | 0.0016 | 0.16 |
 
 ### Stability Assessment
-- **Maximum CV:** 1.70%
-- **Classification:** HIGHLY STABLE
+- **Maximum CV:** 2.12%
+- **Classification:** MODERATELY STABLE
   - CV < 2%: Highly stable ✅
   - CV 2-5%: Moderately stable ⚠️
   - CV > 5%: Unstable 🚨
 
 ### Class-Specific Stability
-- Human Recall CV: **0.48%**
-- AI Recall CV: **1.70%**
-- Ratio (AI/Human): **3.52x**
+- Human Recall CV: **0.53%**
+- AI Recall CV: **2.12%**
+- Ratio (AI/Human): **4.02x**
 
 ### Interpretation
-✅ **STABLE PERFORMANCE:** Both classes show low variance. Imbalance not causing instability.
+⚠️ **MODERATE STABILITY:** Some variance detected but within acceptable range.
 
 ---
 
@@ -111,22 +111,22 @@ Test how models trained on balanced vs imbalanced data generalize across differe
 
 | Training | Testing | Accuracy | Human Recall | AI Recall |
 |----------|---------|----------|--------------|-----------|
-| Imbalanced | Imbalanced | 0.9728 | 0.9819 | 0.9500 |
-| Imbalanced | Balanced | 0.9950 | 1.0000 | 0.9900 |
-| Balanced | Imbalanced | 0.9713 | 0.9639 | 0.9900 |
-| Balanced | Balanced | 0.9575 | 0.9550 | 0.9600 |
+| Imbalanced | Imbalanced | 0.9714 | 0.9780 | 0.9550 |
+| Imbalanced | Balanced | 0.9925 | 0.9950 | 0.9900 |
+| Balanced | Imbalanced | 0.9642 | 0.9559 | 0.9850 |
+| Balanced | Balanced | 0.9400 | 0.9500 | 0.9300 |
 
 ### Generalization Analysis
-- **Imbalanced model generalization gap:** 0.0222 (2.22%)
-- **Balanced model generalization gap:** 0.0138 (1.38%)
+- **Imbalanced model generalization gap:** 0.0211 (2.11%)
+- **Balanced model generalization gap:** 0.0242 (2.42%)
 
 ### Minority Class (AI) Performance
-- Imbalanced train → Imbalanced test: **0.9500**
-- Balanced train → Imbalanced test: **0.9900**
-- **Improvement:** +4.00%
+- Imbalanced train → Imbalanced test: **0.9550**
+- Balanced train → Imbalanced test: **0.9850**
+- **Improvement:** +3.00%
 
 ### Interpretation
-⚠️ **BALANCED SUPERIOR:** Balanced training generalizes better across distributions.
+✅ **IMBALANCED OPTIMAL:** Original approach maintains better performance.
 
 ---
 
@@ -144,24 +144,24 @@ Rigorous validation maintaining class ratios across all folds to assess true per
 
 | Metric | Mean | Std | 95% CI |
 |--------|------|-----|--------|
-| Accuracy | 0.9688 | 0.0057 | [0.9576, 0.9799] |
-| Human Recall | 0.9795 | 0.0036 | [0.9725, 0.9866] |
-| AI Recall | 0.9419 | 0.0202 | [0.9023, 0.9815] |
-| Human F1 | 0.9782 | 0.0039 | [0.9705, 0.9858] |
-| AI F1 | 0.9451 | 0.0103 | [0.9249, 0.9654] |
-| AUC | 0.9957 | 0.0007 | [0.9944, 0.9971] |
+| Accuracy | 0.9679 | 0.0061 | [0.9559, 0.9799] |
+| Human Recall | 0.9799 | 0.0067 | [0.9669, 0.9930] |
+| AI Recall | 0.9379 | 0.0266 | [0.8858, 0.9901] |
+| Human F1 | 0.9776 | 0.0042 | [0.9694, 0.9857] |
+| AI F1 | 0.9435 | 0.0115 | [0.9209, 0.9661] |
+| AUC | 0.9947 | 0.0016 | [0.9915, 0.9978] |
 
 ### Variance Analysis
-- **Human Recall Std:** 0.0036
-- **AI Recall Std:** 0.0202
-- **Variance Ratio (AI/Human):** 5.62x
+- **Human Recall Std:** 0.0067
+- **AI Recall Std:** 0.0266
+- **Variance Ratio (AI/Human):** 4.00x
 
 ⚠️ **VARIANCE ISSUE:** AI recall has 50%+ higher variance than Human. Minority class performance is less stable.
 
 ### Statistical Significance Test
 **Paired t-test (Human vs AI Recall):**
-- t-statistic: **3.9249**
-- p-value: **0.0172**
+- t-statistic: **3.0277**
+- p-value: **0.0389**
 - Conclusion: **Statistically significant difference (p < 0.05)**
 
 ⚠️ Human and AI recall are significantly different. Examine if bias exists.
@@ -175,10 +175,10 @@ Rigorous validation maintaining class ratios across all folds to assess true per
 Based on comprehensive testing across 4 independent experiments, the class imbalance (2.5:1 ratio) has been thoroughly evaluated:
 
 **Evidence Summary:**
-1. **Class Weights:** MINIMAL IMPACT - accuracy change of -0.43%
-2. **Stability:** HIGHLY STABLE - max CV of 1.70%
-3. **Generalization:** BALANCED BETTER - generalization gap difference of 0.0084
-4. **Variance:** VARIANCE ISSUE - variance ratio of 5.62x
+1. **Class Weights:** MINIMAL IMPACT - accuracy change of -0.29%
+2. **Stability:** MODERATELY STABLE - max CV of 2.12%
+3. **Generalization:** IMBALANCED BETTER - generalization gap difference of 0.0031
+4. **Variance:** VARIANCE ISSUE - variance ratio of 4.00x
 
 **Final Determination:**
 
@@ -189,11 +189,11 @@ Based on comprehensive testing across 4 independent experiments, the class imbal
 ### Recommendations for Research Report
 
 **1. Model Training:**
-- Consider using class weights (scale_pos_weight=2.50)
+- Consider using class weights (scale_pos_weight=2.49)
 - Alternatively, use balanced sampling via undersampling
 
 **2. Results Reporting:**
-- Report accuracy: **0.9688 ± 1.1126** (95% CI)
+- Report accuracy: **0.9679 ± 1.1976** (95% CI)
 - Emphasize class-specific metrics (precision, recall, F1)
 - Include AUC-ROC as robust metric
 - Acknowledge 2.5:1 imbalance as methodological note
