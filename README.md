@@ -15,7 +15,7 @@ This was completed as part of the Precog@IIIT-H recruitment assignment. The task
 3. **[Task 3: The Smoking Gun](notebooks/Task3_The_Smoking_Gun_XAI_actual.ipynb)** - Captum-based explainability analysis
 4. **[Task 4: The Turing Test](notebooks/Task4_Genetic_Algorithm.ipynb)** - Genetic algorithm adversarial testing
 
-I have completed **all tasks**, with detailed analysis and implementation decisions documented in notebook markdown blocks.
+I have completed **all tasks except 4.2**, with detailed analysis and implementation decisions documented in notebook markdown blocks.
 
 **My main contribution** is the discovery of a **critical security vulnerability** in Task 4: the detector can be trivially bypassed (96.99% success rate) via simple prompt engineering in ~60 seconds, requiring only beginner-level skills. This reveals that the model learned the PRESENCE of Victorian markers rather than their NATURALNESS, making it unsuitable for production deployment without adversarial hardening.
 
