@@ -1,0 +1,14 @@
+================================================================================
+BEST EVOLVED PARAGRAPH (SUPER-IMPOSTER)
+================================================================================
+
+Fitness: 0.9699 (96.99% Human)
+Predicted Class: Human
+Generations: 1
+Success: YES
+
+================================================================================
+
+I had never known such sepulchral cold as I did in that ancient family vault, its air thick with miasma of ages. The coffin lid lay splintered upon damp stone; thence had emerged a sight most ghastly, which we had been summoned to witness ere dawn broke, lest news of the profanity should spread through London. Wherefore such a deed was done, I could not fathom—for no jewels were taken, no valuables disturbed. Only the poor departed soul, her hands now crossed in a fashion I had never seen, and a singular, dark sigil drawn upon her brow. Whence this devilry had sprung, we knew not, but the constable stood aghast; even my own companion, a man of iron nerve, seemed for a moment shaken by this most unnatural violation of the dead.
+
+================================================================================

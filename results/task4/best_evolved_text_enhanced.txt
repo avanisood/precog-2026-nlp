@@ -1,0 +1,44 @@
+================================================================================
+BEST EVOLVED TEXT (ENHANCED GA)
+================================================================================
+
+SUCCESS: YES - Achieved target!
+Fitness: 1.0522
+Human Probability: 0.9322 (93.22%)
+AI Probability: 0.0678 (6.78%)
+Predicted Class: Human
+Word Count: 154
+Generations: 5
+Runtime: 0:08:28.615575
+Initial fitness: 0.07% Human
+Improvement: +93.15%
+
+================================================================================
+EVOLVED TEXT:
+================================================================================
+
+The deck of *The Albatross* afforded a spectacle of earnest labour, inasmuch as our good vessel did cleave the cerulean main, ever in pursuit of that distant verge which held the promise of undiscovered shores. The sun bore down with great force upon the timbers, and the salt-taste of the sea did perpetually linger on the tongue. Howsoever, the ocean’s tranquil countenance was altered with frightful celerity. The firmament did wax a baleful purple, whereupon a tempest descended, rendering the sea a very vortex of mountainous billows. Forthwith, every soul aboard applied himself to the task—heaving upon the lines with raw palms and wrestling against the great wheel. When the dawn at length did break, the squall at last abated, leaving in its wake a sea made placid and much humbled. Sorely wearied, yet withal triumphant, a profound awe took hold of our company; for we had beheld Nature’s sovereign fury, and had prevailed.
+
+================================================================================
+VICTORIAN MARKER ANALYSIS:
+================================================================================
+
+Archaic conjunctions (ere, lest):  Initial:  0  →  Final:  0  (+0)
+Past tense markers (was, had):     Initial:  8  →  Final:  3  (-5)
+First-person pronouns (I, he):     Initial:  0  →  Final:  1  (+1)
+Modern transitions (however):      Initial:  0  →  Final:  0  (+0)
+Victorian vocabulary:               Initial:  0  →  Final:  0  (+0)
+Semicolons:                         Initial:  1  →  Final:  1  (+0)
+Em-dashes:                          Initial:  0  →  Final:  1  (+1)
+
+================================================================================
+MOST EFFECTIVE MUTATION STRATEGIES:
+================================================================================
+
+1. formality_increase             - 100.0% success (4 attempts, avg Δ=+0.0672)
+2. archaic_language_boost         - 100.0% success (2 attempts, avg Δ=+0.4502)
+3. vocabulary_elevation           -  50.0% success (2 attempts, avg Δ=+0.0001)
+4. structural_complexity          -  33.3% success (3 attempts, avg Δ=-0.1722)
+5. atmospheric_storytelling       -  16.7% success (6 attempts, avg Δ=-0.0010)
+
+================================================================================

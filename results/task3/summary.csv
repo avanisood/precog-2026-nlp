@@ -1,0 +1,2 @@
+test_accuracy,total_samples,true_negatives,false_positives,false_negatives,true_positives
+0.9971387696709585,699,497,2,0,200

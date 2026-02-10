@@ -1,0 +1,15 @@
+================================================================================
+BEST EVOLVED TEXT
+================================================================================
+
+Fitness: 1.1402
+Human Probability: 0.9902 (99.02%)
+Predicted Class: Human
+Generations: 8
+Success: YES
+
+================================================================================
+
+The November miasma which pursued me from the mews was at length vanquished by the sepulchral chill of Lord Harrington’s study. Though I am not unacquainted with morbid spectacles, I apprehended at once that this particular scene was destined to be etched upon my memory. All within was of a pristine order: the desk unmarred, the man himself reposing with a placid mien, a sanguine rose yet clasped in his hand. The coroner professed his bewilderment, for there was neither violent ingress nor any perceptible agent of demise; it was as though the gentleman had willed his own cessation. My eye, however, was arrested by the casement window, bolted securely from within. Upon its glass was a tracery of rime, a filigree of such preternatural complexity it resembled a maker’s mark—a sublime, glacial signature, whose artisan I harbored the conviction had but lately taken his leave.
+
+================================================================================

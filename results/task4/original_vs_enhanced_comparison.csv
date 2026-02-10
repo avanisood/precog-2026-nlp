@@ -1,0 +1,9 @@
+Metric,Original GA,Enhanced GA
+Initial Best Fitness,0.07% Human,0.07% Human
+Final Best Fitness,99.02% Human,93.22% Human
+Improvement,+98.95%,+93.15%
+Generations Run,8,5
+Target Achieved,YES,YES
+Runtime,0:15:20.906469,0:08:28.615575
+Best Strategy (Original),vocabulary_elevation,
+Best Strategy (Enhanced),,formality_increase
